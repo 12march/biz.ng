@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Listing;
 
 use Illuminate\Http\Request;
 
@@ -26,6 +27,10 @@ class DashboardController extends Controller
     {
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        return view('dashboard')->with('listings', $user->listings);
+        $listings = $user->listings;
+
+        $listing = Listing::find($user_id);
+
+        return view('dash', compact('listings', 'listing'));
     }
 }

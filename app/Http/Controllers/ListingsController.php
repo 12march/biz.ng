@@ -34,7 +34,7 @@ class ListingsController extends Controller
      */
     public function create()
     {
-        return view('createlistings');
+        return view('add');
     }
 
     /**
@@ -78,7 +78,7 @@ class ListingsController extends Controller
     public function show($id)
     {
         $listing = Listing::find($id);
-        return view('showlistings')->with('listing', $listing);
+        return view('show')->with('listing', $listing);
     }
 
     /**

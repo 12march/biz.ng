@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', 'ListingsController@index');;
+Route::get('/index', function () {
+    return view('add');
+});
+
+Route::get('/', 'ListingsController@index');
 
 Auth::routes();
 
